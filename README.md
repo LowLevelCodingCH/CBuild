@@ -10,6 +10,13 @@ Link SDL
 Link SDLmain
 Link c
 Link m
+
+==~==
+
+AddExe otherstuff
+Source otherstuff.c
+LinkDir .
+Link prender
 ```
 
 "AddExe" and "Source" should be at the start in the order.
@@ -19,3 +26,5 @@ The command for that would be:
 ```bash
 gcc -o prender prender.c -Llib -Iinclude -lSDL -lSDLmain -lc -lm
 ```
+
+"==~==" is used to split sections.
