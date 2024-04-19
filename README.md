@@ -16,6 +16,6 @@ Link m
 "LinkDir" and "IncludeDir" should be before you write "Link".
 The command for that would be:
 
-```sh
+```bash
 gcc -o prender prender.c -Llib -Iinclude -lSDL -lSDLmain -lc -lm
 ```
