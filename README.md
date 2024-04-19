@@ -21,10 +21,13 @@ Link prender
 
 "AddExe" and "Source" should be at the start in the order.
 "LinkDir" and "IncludeDir" should be before you write "Link".
-The command for that would be:
+The command sfor that would be:
 
 ```bash
 gcc -o prender prender.c -Llib -Iinclude -lSDL -lSDLmain -lc -lm
+```
+```bash
+gcc -o otherstuff otherstuff.c -L -lprender
 ```
 
 "==~==" is used to split sections.
