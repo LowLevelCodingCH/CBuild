@@ -12,6 +12,9 @@ fn runSection(code: &str){
                 "ObjectOut" => {
                     gcccmd.push("-c".to_string());
                 }
+                "BuildStatic" => {
+                    gcccmd.push("-static".to_string());
+                }
                 "Source" => {
                     if let Some(lib) = tokens.get(1) {
                         gcccmd.push(lib.to_string());
@@ -48,8 +51,8 @@ fn runSection(code: &str){
         .args(&gcccmd[1..]) // Exclude "gcc" from arguments
         .output()
         .expect("Failed to execute command");
-    println!("{}", format!("Executed Command: {:?} After Preferences", gcccmd.join(" ")).yellow().bold());
-    println!("status: {}", output.status);
+    println!("{}", format!("Executed Command: {:?} After Preferences", gcccmd.join(" ")).blue().bold());
+    println!("{}", format!("status: {}", output.status).green().bold());
     println!("{}", format!("{} {}", "[~] stdout:", String::from_utf8_lossy(&output.stdout)).yellow().bold());
     println!("{}", format!("{} {}", "[-] stderr:", String::from_utf8_lossy(&output.stderr)).red().bold());
 }
