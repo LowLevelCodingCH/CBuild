@@ -29,7 +29,7 @@ The commands for that would be:
 gcc -c -o prender prender.c -Llib -Iinclude -lSDL -lSDLmain -lc -lm
 ```
 ```bash
-gcc -o otherstuff otherstuff.c -L -lotherstuff -lstdc++
+gcc -o otherstuff otherstuff.c -L. -lotherstuff -lstdc++
 ```
 
 "==~==" is used to split sections.
