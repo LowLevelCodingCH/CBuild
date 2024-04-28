@@ -2,6 +2,7 @@
 ## Here an example:
 
 ```CMake
+ObjectOut
 AddExe prender
 Source prender.c
 LinkDir lib
@@ -16,18 +17,19 @@ Link m
 AddExe otherstuff
 Source otherstuff.c
 LinkDir .
-Link prender
+Link somelibrary
+Link stdc++
 ```
 
-"AddExe" and "Source" should be at the start in the order.
+"ObjectOut", "AddExe" and "Source" should be at the start in the order.
 "LinkDir" and "IncludeDir" should be before you write "Link".
-The command sfor that would be:
+The commands for that would be:
 
 ```bash
-gcc -o prender prender.c -Llib -Iinclude -lSDL -lSDLmain -lc -lm
+gcc -c -o prender prender.c -Llib -Iinclude -lSDL -lSDLmain -lc -lm
 ```
 ```bash
-gcc -o otherstuff otherstuff.c -L -lprender
+gcc -o otherstuff otherstuff.c -L -lotherstuff -lstdc++
 ```
 
 "==~==" is used to split sections.
