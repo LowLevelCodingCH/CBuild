@@ -13,6 +13,8 @@ Link c
 Link m
 
 ==~==
+NoStdLib
+NoDefLib
 BuildStatic
 AddExe otherstuff
 Source otherstuff.c
@@ -21,7 +23,7 @@ Link somelibrary
 Link stdc++
 ```
 
-"BuildStatic", "ObjectOut", "AddExe" and "Source" should be at the start in the order.
+"NoStdLib", "NoDefLib", "BuildStatic", "ObjectOut", "AddExe" and "Source" should be at the start in the order.
 "LinkDir" and "IncludeDir" should be before you write "Link".
 The commands for that would be:
 
