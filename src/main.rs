@@ -9,6 +9,12 @@ fn runSection(code: &str){
         let tokens: Vec<&str> = line.split_whitespace().collect();
         if let Some(token) = tokens.get(0) {
             match *token {
+                "NoStdLib" => {
+                    gcccmd.push("-nostdlib".to_string());
+                }
+                "NoDefLib" => {
+                    gcccmd.push("-nodefaultlibs".to_string());
+                }
                 "ObjectOut" => {
                     gcccmd.push("-c".to_string());
                 }
